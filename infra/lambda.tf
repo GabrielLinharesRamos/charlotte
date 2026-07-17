@@ -1,7 +1,7 @@
 data "archive_file" "lambda" {
   type        = "zip"
-  source_file = "${path.module}/lambda/main.py"
-  output_path = "${path.module}/lambda.zip"
+  source_file = "${path.module}/../lambda/main.py"
+  output_path = "${path.module}/../lambda.zip"
 }
 
 resource "aws_iam_role" "lambda_role" {
