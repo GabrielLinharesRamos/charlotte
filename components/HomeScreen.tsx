@@ -97,6 +97,8 @@ export default function HomeScreen({
   sessionsDone,
   sessionsTotal,
   exercises,
+  appointments,
+  onNavigate,
   onToggleExercise,
 }: HomeScreenProps) {
   const [imageError, setImageError] = useState(false);
