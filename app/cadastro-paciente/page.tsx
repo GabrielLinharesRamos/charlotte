@@ -81,7 +81,7 @@ export default function CadastroPacientePage() {
     } else {
       // Finalizar cadastro
       if (email.trim().length > 0 && senha.length >= 6 && termosAceitos) {
-        router.push("/home");
+        router.push("/inicio");
       }
     }
   };
