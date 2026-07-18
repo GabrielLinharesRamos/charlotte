@@ -101,7 +101,10 @@ export default function LoginFisioterapeutaPage() {
           </div>
 
           {/* Botão Entrar */}
-          <button className="w-full rounded-2xl bg-[#0B7B69] py-4 text-md font-semibold text-white shadow-lg shadow-[#0B7B69]/20 transition-all active:scale-95 hover:bg-[#096355]">
+          <button 
+            onClick={() => router.push("/inicio")}
+            className="w-full rounded-2xl bg-[#0B7B69] py-4 text-md font-semibold text-white shadow-lg shadow-[#0B7B69]/20 transition-all active:scale-95 hover:bg-[#096355]"
+          >
             Entrar
           </button>
 
