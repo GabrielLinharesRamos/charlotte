@@ -135,7 +135,13 @@ export default function LoginFisioterapeutaPage() {
           {/* Criar Conta */}
           <div className="text-center pt-2">
             <p className="text-xs font-medium text-gray-400">
-              Ainda não tem conta? <button className="font-bold text-[#0B7B69] hover:underline">Criar conta</button>
+              Ainda não tem conta?{" "}
+              <button 
+                onClick={() => router.push("/cadastro-fisio")} 
+                className="font-bold text-[#0B7B69] hover:underline"
+              >
+                Criar conta
+              </button>
             </p>
           </div>
 
