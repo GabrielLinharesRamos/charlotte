@@ -252,7 +252,7 @@ export default function RegisterTherapistScreen() {
         {step === 3 && (
           <div>
             <h1 className="text-2xl font-bold text-slate-900 leading-tight">Criar acesso</h1>
-            <p className="text-slate-500 text-sm mt-1">Para acessar o app</p>
+            <p className="text-slate-500 text-sm mt-1">Seu e-mail e senha</p>
 
             <div className="mt-8 space-y-4">
               {/* E-mail profissional */}
@@ -288,14 +288,11 @@ export default function RegisterTherapistScreen() {
               </div>
 
               {/* Banner Declaração de CREFITO */}
-              <div className="flex gap-3 bg-[#E6F3F0] border border-[#d2ebe5] rounded-2xl p-4 mt-6">
-                <IconInfo />
-                <div>
-                  <h4 className="text-xs font-bold text-[#0D7A5A]">Declaração de CREFITO:</h4>
-                  <p className="text-[11px] text-[#0D7A5A] font-medium leading-relaxed mt-0.5">
-                    O CREFITO deve estar ativo e regularizado. Caso contrário, sua conta será bloqueada.
-                  </p>
-                </div>
+              <div className="bg-[#E6F3F0] rounded-2xl p-4 mt-6">
+                <h4 className="text-xs font-bold text-[#0D7A5A]">Verificação em até 24h</h4>
+                <p className="text-[11px] text-slate-500 font-semibold leading-relaxed mt-1">
+                  Analisaremos seu CREFITO antes de ativar seu perfil para atendimentos.
+                </p>
               </div>
             </div>
           </div>
@@ -314,8 +311,21 @@ export default function RegisterTherapistScreen() {
               : "bg-[#E6EBEF] text-slate-400 shadow-none cursor-not-allowed"
           }`}
         >
-          {step === 3 ? "Criar conta" : "Continuar"}
+          {step === 3 ? "Enviar cadastro" : "Continuar"}
         </button>
+
+        {step === 3 && (
+          <p className="text-center text-xs text-slate-400 mt-4 font-medium">
+            Já tem conta?{" "}
+            <button
+              type="button"
+              onClick={() => router.push("/login-fisioterapeuta")}
+              className="text-[#0D7A5A] font-bold hover:underline"
+            >
+              Entrar
+            </button>
+          </p>
+        )}
       </div>
     </div>
   );
