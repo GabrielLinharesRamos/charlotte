@@ -3,18 +3,15 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
-export default function LoginFisioterapeutaPage() {
+export default function LoginPacientePage() {
   const router = useRouter();
   const [mostrarSenha, setMostrarSenha] = useState(false);
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gray-950 p-0 sm:p-4 font-sans">
+    <div className="flex min-h-screen items-center justify-center bg-[#F6F8FA] p-0 sm:p-4 font-sans selection:bg-[#0B7B69]/10">
       
-      {/* 📱 MOLDURA DO CELULAR */}
-      <div className="relative flex h-screen w-full max-w-[400px] flex-col bg-white p-6 sm:h-[850px] sm:rounded-[40px] sm:border-[8px] sm:border-gray-800 shadow-2xl overflow-hidden select-none">
-        
-        {/* Linha da câmera do celular (visível apenas no PC) */}
-        <div className="hidden sm:block absolute top-2 left-1/2 h-4 w-28 -translate-x-1/2 rounded-full bg-gray-800 z-50" />
+      {/* Container Principal (Sem moldura preta de celular ou notch) */}
+      <div className="relative flex h-screen w-full max-w-[400px] flex-col bg-white p-6 sm:h-[820px] sm:rounded-[32px] sm:border sm:border-gray-100 shadow-xl overflow-hidden select-none text-gray-900">
 
         {/* Botão de Voltar */}
         <div className="pt-4">
@@ -135,7 +132,13 @@ export default function LoginFisioterapeutaPage() {
           {/* Criar Conta */}
           <div className="text-center pt-2">
             <p className="text-xs font-medium text-gray-400">
-              Ainda não tem conta? <button className="font-bold text-[#0B7B69] hover:underline">Criar conta</button>
+              Ainda não tem conta?{" "}
+              <button 
+                onClick={() => router.push("/cadastro-paciente")} 
+                className="font-bold text-[#0B7B69] hover:underline"
+              >
+                Criar conta
+              </button>
             </p>
           </div>
 
