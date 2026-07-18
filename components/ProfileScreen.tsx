@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { useRouter } from "next/navigation";
 
 /* ─── Ícones SVG ─────────────────────────────────────────────────────────── */
 
@@ -78,7 +79,19 @@ const MenuItem = ({ Icon, title, subtitle }: MenuItemProps) => (
   </button>
 );
 
+const IconLogout = () => (
+  <svg className="w-5 h-5 text-red-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+    <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" />
+  </svg>
+);
+
 export default function ProfileScreen() {
+  const router = useRouter();
+
+  const handleLogout = () => {
+    router.push("/login-paciente");
+  };
+
   return (
     <div className="flex flex-col gap-6 pb-8 bg-[#F6F8FA] min-h-[calc(100vh-80px)]">
       {/* Top Header */}
@@ -140,6 +153,24 @@ export default function ProfileScreen() {
         <div className="bg-white rounded-3xl overflow-hidden shadow-[0_4px_16px_rgba(0,0,0,0.015)] border border-slate-100/50">
           <MenuItem Icon={IconCalendar} title="Minhas sessões" subtitle="12 sessões realizadas" />
         </div>
+      </div>
+
+      {/* Botão Sair da Conta */}
+      <div className="px-6">
+        <button
+          onClick={handleLogout}
+          className="w-full flex items-center justify-between py-4 px-4 bg-white rounded-3xl shadow-[0_4px_16px_rgba(0,0,0,0.015)] border border-slate-100/50 hover:bg-red-50 transition-colors group"
+        >
+          <div className="flex items-center gap-3.5">
+            <div className="w-10 h-10 rounded-full bg-red-50 flex items-center justify-center shrink-0">
+              <IconLogout />
+            </div>
+            <span className="text-sm font-bold text-red-500">Sair da conta</span>
+          </div>
+          <svg className="w-4 h-4 text-red-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
       </div>
     </div>
   );

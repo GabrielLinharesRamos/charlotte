@@ -6,6 +6,10 @@ import { useRouter } from "next/navigation";
 export default function PerfilFisioterapeutaPage() {
   const router = useRouter();
 
+  const handleLogout = () => {
+    router.push("/login-fisioterapeuta");
+  };
+
   return (
     <div className="flex min-h-screen items-center justify-center bg-gray-950 p-0 sm:p-4 font-sans">
       
@@ -138,6 +142,24 @@ export default function PerfilFisioterapeutaPage() {
               </div>
             </div>
           </div>
+
+          {/* Botão Sair da Conta */}
+          <button
+            onClick={handleLogout}
+            className="w-full flex items-center justify-between py-4 px-4 bg-white rounded-2xl border border-red-100 shadow-sm hover:bg-red-50 active:scale-[0.99] transition-all"
+          >
+            <div className="flex items-center gap-4">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-red-50">
+                <svg className="h-5 w-5 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" />
+                </svg>
+              </div>
+              <span className="text-sm font-bold text-red-500">Sair da conta</span>
+            </div>
+            <svg className="w-4 h-4 text-red-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
 
         </div>
 
