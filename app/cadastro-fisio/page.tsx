@@ -34,7 +34,7 @@ export default function CadastroFisioPage() {
       setStep((prev) => (prev + 1) as 1 | 2 | 3);
     } else {
       // Finalizar cadastro
-      router.push("/home"); 
+      router.push("/home-fisio"); 
     }
   };
 
