@@ -235,7 +235,7 @@ export default function RegisterTherapistScreen() {
                         onClick={() => handleToggleTag(esp)}
                         className={`px-4 py-2 rounded-xl text-xs font-semibold border transition-all ${
                           isSelected
-                            ? "bg-[#E6F3F0] text-[#0D7A5A] border-[#0D7A5A]"
+                            ? "bg-[#0D7A5A] text-white border-transparent"
                             : "bg-[#F6F8FA] text-slate-500 border-slate-100 hover:border-slate-300"
                         }`}
                       >
@@ -287,13 +287,13 @@ export default function RegisterTherapistScreen() {
                 </button>
               </div>
 
-              {/* Banner Declaração de CRM */}
+              {/* Banner Declaração de CREFITO */}
               <div className="flex gap-3 bg-[#E6F3F0] border border-[#d2ebe5] rounded-2xl p-4 mt-6">
                 <IconInfo />
                 <div>
-                  <h4 className="text-xs font-bold text-[#0D7A5A]">Declaração de CRM:</h4>
+                  <h4 className="text-xs font-bold text-[#0D7A5A]">Declaração de CREFITO:</h4>
                   <p className="text-[11px] text-[#0D7A5A] font-medium leading-relaxed mt-0.5">
-                    O CRM deve estar ativo e regularizado. Caso contrário, sua conta será bloqueada.
+                    O CREFITO deve estar ativo e regularizado. Caso contrário, sua conta será bloqueada.
                   </p>
                 </div>
               </div>
